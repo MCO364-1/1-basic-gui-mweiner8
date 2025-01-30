@@ -16,6 +16,7 @@ public class Main {
         JLabel label1 = new JLabel("     ");
         JLabel label2 = new JLabel("Please enter a number into each of the text fields");
         button.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 try{
