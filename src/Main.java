@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Main {
     public static void main(String[] args) {
@@ -15,18 +13,14 @@ public class Main {
         JButton button = new JButton("Add the numbers");
         JLabel label1 = new JLabel("     ");
         JLabel label2 = new JLabel("Please enter a number into each of the text fields");
-        button.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try{
-                    int num1 = Integer.parseInt(tf1.getText());
-                    int num2 = Integer.parseInt(tf2.getText());
-                    label1.setText(String.valueOf(num1 + num2));
-                    label2.setText("Please enter a number into each of the text fields");
-                } catch (NumberFormatException ex) {
-                    label2.setText("Please only enter numbers into the text fields");
-                }
+        button.addActionListener(e -> {
+            try{
+                int num1 = Integer.parseInt(tf1.getText());
+                int num2 = Integer.parseInt(tf2.getText());
+                label1.setText(String.valueOf(num1 + num2));
+                label2.setText("Please enter a number into each of the text fields");
+            } catch (NumberFormatException ex) {
+                label2.setText("Please only enter numbers into the text fields");
             }
         });
         window.add(tf1);
